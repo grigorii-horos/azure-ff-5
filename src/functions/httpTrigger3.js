@@ -1,6 +1,6 @@
 const { app } = require("@azure/functions");
 
-app.http("httpTrigger2", {
+app.http("httpTrigger3", {
   methods: ["GET", "POST"],
   authLevel: "anonymous",
   handler: async (request, context) => {
@@ -8,6 +8,6 @@ app.http("httpTrigger2", {
 
     const name = request.query.get("name") || (await request.text()) || "world";
 
-    return { body: `Helloq, ${name}!` };
+    return { body: `Hello, ${name}!` };
   },
 });
